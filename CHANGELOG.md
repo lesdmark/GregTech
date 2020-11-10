@@ -1,5 +1,24 @@
 ## Changelog
 
+### 1.10.4
+* Added placing Pump/Conveyor/Robotic Arm on Output side of machine will turn allow input from output side on (#1266) - PrototypeTrousers
+* Fixed issue preventing battery from fully charged. (#1267) - Derek.CHAN
+* Fixes Crafting Station crash and item dupe (#1274) - PrototypeTrousers
+* Fixed some RU lang entries (#1279) - Bombm
+
+### 1.10.3
+* Updated (extended) manual I/O mode on covers to be able to bypass filter (#1248) - PrototypeTrousers
+* Fixed JEI R/U hotkeys not working on GTCE Fluid Slots (#1260) - PrototypeTrousers
+
+### 1.10.2
+* Added way to cast materials in CraftTweaker (#1232) - LAGIdiot
+* Added zenClass annotation to GemMaterial and RoughSolidMaterial (#1253) - LAGIdiot
+* Added comment to config regarding need of useCustomModPriorities to be set to true for modPriorities to work (#1254) - LAGIdiot
+* Added NanoSaber configuration options (#1258) - ALongStringOfNumbers
+* Updated multiblock info recipe to be exposed (#1245) - decal
+* Fixed Rotor Holder spinning status after world reload (#1240) - ALongStringOfNumbers
+* Fixed crash when attempting to move items through Shutter Covers (#1247) - ALongStringOfNumbers
+
 ### 1.10.1
 * Added english fruit juice localization (#1204) - Saereth
 * Updated Scanner tooltip to clarify usage (#1214) - DoctorWeirdGuy

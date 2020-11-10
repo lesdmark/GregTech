@@ -67,7 +67,8 @@ public class ConfigHolder {
     public static boolean useCustomModPriorities = false;
 
     @Config.Comment("Specifies priorities of mods in ore dictionary item registration. First ModID has highest priority, last - lowest. " +
-        "Unspecified ModIDs follow standard sorting, but always have lower priority than last specified ModID.")
+        "Unspecified ModIDs follow standard sorting, but always have lower priority than last specified ModID." +
+        "\nFor this to work \"useCustomModPriorities\" has to be set to true.")
     @Config.RequiresMcRestart
     public static String[] modPriorities = new String[0];
 
@@ -85,6 +86,9 @@ public class ConfigHolder {
 
     @Config.Comment("Category that contains configs for machines with specific behavior")
     public static MachineSpecificConfiguration machineSpecific = new MachineSpecificConfiguration();
+
+    @Config.Comment("Category that contains configs for the NanoSaber")
+    public static NanoSaberConfiguration nanoSaberConfiguration = new NanoSaberConfiguration();
 
     @Config.Comment("Sets the bonus EU output of Steam Turbines. Default: 6144")
     @Config.RequiresMcRestart
@@ -128,5 +132,26 @@ public class ConfigHolder {
     public static class MachineSpecificConfiguration {
         @Config.Comment("Array of blacklisted dimension IDs in which Air Collector does not work.")
         public int[] airCollectorDimensionBlacklist = new int[]{};
+    }
+
+    public static class NanoSaberConfiguration {
+
+        @Config.RangeDouble(min = 0, max = 100)
+        @Config.Comment("The additional damage added when the NanoSaber is powered. Default: 20.0")
+        @Config.RequiresMcRestart
+        public double nanoSaberDamageBoost = 20;
+
+        @Config.RangeDouble(min = 0, max = 100)
+        @Config.Comment("The base damage of the NanoSaber. Default: 5.0")
+        @Config.RequiresMcRestart
+        public double nanoSaberBaseDamage = 5;
+
+        @Config.Comment("Should Zombies spawn with charged, active NanoSabers on hard difficulty? Default: true")
+        public boolean zombieSpawnWithSabers = true;
+
+        @Config.RangeInt(min = 1, max = 512)
+        @Config.Comment("The EU/t consumption of the NanoSaber. Default: 64")
+        @Config.RequiresMcRestart
+        public int energyConsumption = 64;
     }
 }
